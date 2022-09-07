@@ -1,7 +1,7 @@
 {
   "name": "jucdoctor",
   "version": "1.0.0",
-  "description": "The doctor appointment app",
+  "description": "The hotel booking app",
   "main": "server.js",
   "engines": {
     "node" : "15.7.0",
