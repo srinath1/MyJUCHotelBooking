@@ -1,6 +1,6 @@
 import axios from 'axios'
 export const createHotel=async(token,data)=>{
-   return await axios.post(`${process.env.REACT_APP_API}/create-hotel`,data,{
+   return await axios.post('https://myjuchotelbooking.herokuapp.com/create-hotel',data,{
     headers:{
         Authorization:`Bearer ${token}`
     }
@@ -8,7 +8,7 @@ export const createHotel=async(token,data)=>{
 }
 
 export const allHotels=async()=>{
-   return await axios.get(`${process.env.REACT_APP_API}/hotels`)
+   return await axios.get(`https://myjuchotelbooking.herokuapp.com/hotels`)
 }
 
 export const diffDays=(from,to)=>{
@@ -22,14 +22,14 @@ export const diffDays=(from,to)=>{
     return difference
 }
 export const sellerHotels=async(token)=>{
-    return await axios.get(`${process.env.REACT_APP_API}/seller-hotels`,{
+    return await axios.get(https://myjuchotelbooking.herokuapp.com/seller-hotels`,{
         headers:{
             Authorization:`Bearer ${token}`
         }
     })
 }
 
-export const deleteHotel=async(token,hotelId)=>await axios.delete(`${process.env.REACT_APP_API}/delete-hotel/${hotelId}`,{
+export const deleteHotel=async(token,hotelId)=>await axios.delete(`https://myjuchotelbooking.herokuapp.com/delete-hotel/${hotelId}`,{
 
     headers:{
         Authorization:`Bearer ${token}`
@@ -37,7 +37,7 @@ export const deleteHotel=async(token,hotelId)=>await axios.delete(`${process.env
 })
 
 export const read=async(hotelId)=>{
-   return await axios.get(`${process.env.REACT_APP_API}/hotel/${hotelId}`)
+   return await axios.get(`https://myjuchotelbooking.herokuapp.com//hotel/${hotelId}`)
 }
 
 export const updateHotel = async (token, data, hotelId) =>
@@ -51,14 +51,14 @@ await axios.put(
   }
 );
 
-export const userHotelBookings=async(token)=>await axios.get(`${process.env.REACT_APP_API}/user-hotel-bookings`,{
+export const userHotelBookings=async(token)=>await axios.get(`https://myjuchotelbooking.herokuapp.com/user-hotel-bookings`,{
     
         headers: {
           Authorization: `Bearer ${token}`,
         }
       
 })
-export const isAlreadyBooked=async(token,hotelId)=>await axios.get(`${process.env.REACT_APP_API}/is-already-booked/${hotelId}`,{
+export const isAlreadyBooked=async(token,hotelId)=>await axios.get(`https://myjuchotelbooking.herokuapp.com/is-already-booked/${hotelId}`,{
     
   headers: {
     Authorization: `Bearer ${token}`,
@@ -67,4 +67,4 @@ export const isAlreadyBooked=async(token,hotelId)=>await axios.get(`${process.en
 })
 
 
-export const searchListings=async(query)=>await axios.post(`${process.env.REACT_APP_API}/search-listings`,query)
+export const searchListings=async(query)=>await axios.post(`https://myjuchotelbooking.herokuapp.com/search-listings`,query)
