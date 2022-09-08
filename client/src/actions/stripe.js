@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const createConnectAccount = async (token) =>
   await axios.post(
-    https://myjuchotelbooking.herokuapp.com/create-connect-account`,
+    `https://myjuchotelbooking.herokuapp.com/api/create-connect-account`,
     {},
     {
       headers: {
@@ -13,7 +13,7 @@ export const createConnectAccount = async (token) =>
 
 export const getAccountStatus = async (token) =>
   axios.post(
-    `https://myjuchotelbooking.herokuapp.com/get-account-status`,
+    `https://myjuchotelbooking.herokuapp.com/api/get-account-status`,
     {},
     {
       headers: {
@@ -23,7 +23,7 @@ export const getAccountStatus = async (token) =>
   );
   export const getAccountBalance = async (token) =>
   axios.post(
-    `https://myjuchotelbooking.herokuapp.com/get-account-balance`,
+    `https://myjuchotelbooking.herokuapp.com/api/get-account-balance`,
     {},
     {
       headers: {
@@ -38,13 +38,13 @@ export const getAccountStatus = async (token) =>
     })
   }
 
-  export const payoutSettings=async(token)=>await axios.post(`https://myjuchotelbooking.herokuapp.com/payout-setting`,{},{
+  export const payoutSettings=async(token)=>await axios.post(`https://myjuchotelbooking.herokuapp.com/api/payout-setting`,{},{
     headers: {
       Authorization: `Bearer ${token}`,
     },
 
   })
-  export const getSessionId=async(token,hotelId)=>await axios.post( `https://myjuchotelbooking.herokuapp.com/stripe-session-id`,
+  export const getSessionId=async(token,hotelId)=>await axios.post( `https://myjuchotelbooking.herokuapp.com/api/stripe-session-id`,
 {hotelId},
 {
     headers: {
@@ -55,7 +55,7 @@ export const getAccountStatus = async (token) =>
 )
 
 export const stripeSuccessRequest=async(token,hotelId)=>{
-  return axios.post(`https://myjuchotelbooking.herokuapp.com/stripe-success`,{
+  return axios.post(`https://myjuchotelbooking.herokuapp.com/api/stripe-success`,{
     hotelId,
   },
   {
