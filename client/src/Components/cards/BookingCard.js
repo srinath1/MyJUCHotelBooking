@@ -16,7 +16,7 @@ const BookingCard = ({ hotel, session, orderedBy }) => {
           <div className="col-md-4">
             {hotel.image && hotel.image.contentType ? (
               <img
-                src={`${process.env.REACT_APP_API}/hotel/image/${hotel._id}`}
+                src={`https://myjuchotelbooking.herokuapp.com/api/hotel/image/${hotel._id}`}
                 alt="default hotel image"
                 className="card-image img img-fluid"
               />
