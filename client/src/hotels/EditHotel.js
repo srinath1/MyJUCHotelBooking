@@ -36,7 +36,7 @@ const EditHotel = ({ match }) => {
     let res = await read(match.params.hotelId);
     // console.log(res);
     setValues({ ...values, ...res.data });
-    setPreview(`${process.env.REACT_APP_API}/hotel/image/${res.data._id}`);
+    setPreview(`https://myjuchotelbooking.herokuapp.com/api/hotel/image/${res.data._id}`);
   };
 
   const handleSubmit = async (e) => {
