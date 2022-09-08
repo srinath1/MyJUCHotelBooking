@@ -29,7 +29,7 @@ const ViewHotel = ({ match, history }) => {
     let res = await read(match.params.hotelId);
     // console.log(res);
     setHotel(res.data);
-    setImage(`${process.env.REACT_APP_API}/hotel/image/${res.data._id}`);
+    setImage(`https://myjuchotelbooking.herokuapp.com/api/hotel/image/${res.data._id}`);
   };
 
   const handleClick =async (e) => {
@@ -43,7 +43,7 @@ const ViewHotel = ({ match, history }) => {
     if (!auth) history.push("/login");
    let res=await getSessionId(auth.token,match.params.hotelId)
    console.log('Res=>',res.data.sessionId)
-   const stripe=await loadStripe(process.env.REACT_APP_STRIPE_KEY);
+   const stripe=await loadStripe('pk_test_NhwsAXiyEL3qlLqjuX1WyHg300xY6ZPY9c');
    stripe.redirectToCheckout({
     sessionId:res.data.sessionId
    }).then(result=>console.log('result'))
